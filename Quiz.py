@@ -1,34 +1,16 @@
 import random
+import math
+
 
 player=input(("Type your Name "))
 print(f'Hello {player} this is a quiz game to help with basic math questions.')
 
-# Function to find LCM
-def compute_lcm(x, y):
-   # choose the greater number
-   if x > y:
-       greater = x
-   else:
-       greater = y
+def compute_LCM(x,y):
+    return math.lcm(x,y)
 
-   while(True):
-       if((greater % x == 0) and (greater % y == 0)):
-           lcm = greater
-           break
-       greater += 1
-   return lcm 
 
-#function to find GCD
 def compute_GCD(x, y):
-# choose the smaller number
-    if x > y:
-        smaller = y
-    else:
-        smaller = x
-    for i in range(1, smaller+1):
-        if((x % i == 0) and (y % i == 0)):
-            GCD = i 
-    return GCD
+    return math.gcd(x, y)
 
 while True:
     #generate random number for LCM
@@ -36,7 +18,7 @@ while True:
     LCM_num2=random.randint(1,10)
 
     #equaling the correct answer with the correct lcm value
-    correctAnswerLCM=compute_lcm(LCM_num1, LCM_num2)
+    correctAnswerLCM=compute_LCM(LCM_num1, LCM_num2)
 
     while True: # loop for when the question is wrong it loops until the answer is correct
     #user input for the lcm
@@ -46,7 +28,7 @@ while True:
             print ('Correct ')
             break
         else:
-            print("Incorrect the L.C.M. is", compute_lcm(LCM_num1, LCM_num2))
+            print("Incorrect the L.C.M. is", compute_LCM(LCM_num1, LCM_num2))
 
     #Ask another Answer
     retry = input("Would you like another similar question? (y/n): ")
