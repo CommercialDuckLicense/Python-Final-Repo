@@ -3,11 +3,14 @@ import math
 
 # "\033[31mThis is red text\033[0m" - ANSI code to change text color RED
 # "\033[32mThis is green\033[0m" - ANSI code to change text color GREEN
-# "\033[33mThis is yellow\033[0m" -
+# "\033[33mThis is yellow\033[0m" - ANSI code to change color YELLOW
+# "\033[36mThis is Cyan\033[0m" - ANSI code to change color to CYAN
 
 #introduction, asking for name and explaining the quiz
 player=input(("Type your Name "))
-print(f'Hello {player} this is a quiz game to help with basic questions. ')
+print(f'Hello \033[36m{player}\033[0m this is a quiz game to help with math questions. ')
+print(f'So far there are questions about Least Common Denominator (LCM), Greatest Common Divisor(GCD), and finding the Square Root(Sqrt)')
+
 
 # better code for my LCM function using import features
 def compute_LCM(x,y):
@@ -47,7 +50,7 @@ while True:
         print(f"\033[31mIncorrect try again the answer is {correctAnswerLCM}\033[0m") #this is not a permant print 
 
     #Ask another Answer
-    retry = input("Would you like another question? (\033[32my\033[0m/\033[31mn\033[0m): ")
+    retry = input("Would you like to practice again question? (\033[32my\033[0m/\033[31mn\033[0m): ")
     if retry == 'n':
         print("Good work! On to the next set of questions")
         break
@@ -78,7 +81,7 @@ while True:
         print(f"\033[31mIncorrect try again the answer is {correctAnswerGCD}\033[0m")
 
     #Ask another Answer
-    retry = input("Would you like another question? (\033[32my\033[0m/\033[31mn\033[0m): ")
+    retry = input("Would you more similar questions? (\033[32my\033[0m/\033[31mn\033[0m): ")
     if retry == 'n':
         print("")
         break
@@ -107,7 +110,7 @@ while True:
         print(f"\033[31mIncorrect try again the answer is {correctAnswerSQRT}\033[0m")
             
     #Ask another Answer
-    retry = input("Would you like another question? (\033[32my\033[0m/\033[31mn\033[0m): ")
+    retry = input("Would you like to practice more? (\033[32my\033[0m/\033[31mn\033[0m): ")
     if retry == 'n':
         print("Good work! Quiz ended.")
         break
