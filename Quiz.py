@@ -1,17 +1,23 @@
 import random
 import math
 
+# "\033[31mThis is red text\033[0m" - ANSI code to change text color RED
+# "\033[32mThis is green\033[0m" - ANSI code to change text color GREEN
 
+#introduction, asking for name and explaining the quiz
 player=input(("Type your Name "))
-print(f'Hello {player} this is a quiz game to help with basic math questions.')
+print(f'Hello {player} this is a quiz game to help with basic questions. ')
 
+# better code for my LCM function using import features
 def compute_LCM(x,y):
     return math.lcm(x,y)
 
-
+# code for GCD function
 def compute_GCD(x, y):
     return math.gcd(x, y)
 
+
+#loop to ask user if they want a similar question *LCM
 while True:
     #generate random number for LCM
     LCM_num1=random.randint(1,10) 
@@ -22,20 +28,23 @@ while True:
 
     while True: # loop for when the question is wrong it loops until the answer is correct
     #user input for the lcm
-        answerLCM= int(input(f'Find the LCM of {LCM_num1} and {LCM_num2} ->'))
+        answerLCM= int(input(f'Find the LCM of {LCM_num1} and {LCM_num2} Please enter a Numerical value-> '))
 
         if answerLCM==correctAnswerLCM:
-            print ('Correct ')
+            print ("\033[32mCorrect\033[0m")
             break
         else:
-            print("Incorrect the L.C.M. is", compute_LCM(LCM_num1, LCM_num2))
+            print("\033[31mIncorrect\033[0m the L.C.M is", compute_LCM(LCM_num1, LCM_num2) ) #this is not a permant print 
 
     #Ask another Answer
-    retry = input("Would you like another similar question? (y/n): ")
-    if retry != 'y':
+    retry = input("Would you like another question? (\033[32my\033[0m/\033[31mn\033[0m): ")
+    if retry == 'n':
         print("Good work! On to the next set of questions")
         break
+    if retry == 'y':
+        quit
 
+#loop to ask user if they want a similar question #GCD
 while True:
     GCFnum1 =random.randint(1,10)
     GCFnum2 =random.randint(1,10)
@@ -48,13 +57,15 @@ while True:
         answerGCD= int(input(f'Find the GCD of {GCFnum1} and {GCFnum2} ->'))
 
         if answerGCD==correctAnswerGCD:
-            print ('Correct ')
+            print ("\033[32mCorrect\033[0m")
             break
         else:
-            print("Incorrect the G.C.D is", compute_GCD(GCFnum1, GCFnum2))
-        #Ask another Answer
-    retry = input("Would you like another question? (y/n): ")
-    if retry != 'y':
+            print("\033[31mIncorrect\033[0m the G.C.D is", compute_GCD(GCFnum1, GCFnum2))
+    #Ask another Answer
+    retry = input("Would you like another question? (\033[32my\033[0m/\033[31mn\033[0m): ")
+    if retry == 'n':
         print("Good work! Quiz ended.")
         break
+    if retry == 'y':
+        quit
 
