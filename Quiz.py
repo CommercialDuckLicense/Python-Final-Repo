@@ -3,6 +3,7 @@ import math
 
 # "\033[31mThis is red text\033[0m" - ANSI code to change text color RED
 # "\033[32mThis is green\033[0m" - ANSI code to change text color GREEN
+# "\033[33mThis is yellow\033[0m" -
 
 #introduction, asking for name and explaining the quiz
 player=input(("Type your Name "))
@@ -21,24 +22,29 @@ def compute_Sqrt(x):
     return math.sqrt(x)
 
 
+
 #loop to ask user if they want a similar question *LCM
 while True:
     #generate random number for LCM
     LCM_num1=random.randint(1,10) 
     LCM_num2=random.randint(1,10)
+    
+    max_attempts=3 # number of max attempts
 
     #equaling the correct answer with the correct lcm value
     correctAnswerLCM=compute_LCM(LCM_num1, LCM_num2)
 
-    while True: # loop for when the question is wrong it loops until the answer is correct
+    # loop for when the question is wrong it loops until the answer is correct
     #user input for the lcm
+    for attemptsLeft in range(max_attempts,0,-1):
         answerLCM= int(input(f'Find the LCM of {LCM_num1} and {LCM_num2} Please enter a Numerical value-> '))
+        print(f'\033[33mYou have {attemptsLeft-1} attempts left.\033[0m')
 
         if answerLCM==correctAnswerLCM:
             print ("\033[32mCorrect!\033[0m")
             break
-        else:
-            print("\033[31mIncorrect\033[0m try again", compute_LCM(LCM_num1, LCM_num2) ) #this is not a permant print 
+    else:
+        print(f"\033[31mIncorrect try again the answer is {correctAnswerLCM}\033[0m") #this is not a permant print 
 
     #Ask another Answer
     retry = input("Would you like another question? (\033[32my\033[0m/\033[31mn\033[0m): ")
@@ -53,45 +59,53 @@ while True:
 while True:
     GCFnum1 =random.randint(1,10)
     GCFnum2 =random.randint(1,10)
+    
+    max_attempts=3#number of max attempts
 
     #equaling the correct answer with the correct GCD value
     correctAnswerGCD=compute_GCD(GCFnum1, GCFnum2)
 
-    while True:# loop for when the question is wrong it loops until the answer is correct
-        #user input for the GCD
+    # loop for when the question is wrong it loops until the answer is correct
+    #user input for the GCD
+    for attemptsLeft in range(max_attempts,0,-1):
         answerGCD= int(input(f'Find the GCD of {GCFnum1} and {GCFnum2} ->'))
+        print(f'\033[33mYou have {attemptsLeft-1} attempts left.\033[0m')
 
         if answerGCD==correctAnswerGCD:
             print ("\033[32mCorrect!\033[0m")
             break
-        else:
-            print("\033[31mIncorrect\033[0m try again", compute_GCD(GCFnum1, GCFnum2))
+    else:
+        print(f"\033[31mIncorrect try again the answer is {correctAnswerGCD}\033[0m")
+
     #Ask another Answer
     retry = input("Would you like another question? (\033[32my\033[0m/\033[31mn\033[0m): ")
     if retry == 'n':
-        print("ere")
+        print("")
         break
     if retry == 'y':
         quit
 
-
 # Loop to ask Square Root questions
 while True:
     SQRTnum1 =random.randint(1,10)
-    SQRTnum2=random.randint(1,10)
 
     # equaling the correct answer to the sqrt and rounding
     correctAnswerSQRT=round(compute_Sqrt(SQRTnum1), 2) # round the decimal to 2 values
     
-    while True:# loop for when the question is wrong it loops until the answer is correct
-        #user input for Square root
+    max_attempts = 3
+    
+    #user input for Square root
+    # loop for when the question is wrong it loops until the answer is correct
+    for attemptsLeft in range(max_attempts , 0, -1): 
         answerSqrt= float(input(f'Find the Square Root of {SQRTnum1}, round to the 2nd decimal Ex:(X.XX) ->')) #allows for decmial values
-
+        print(f'\033[33mYou have {attemptsLeft-1} attempts left.\033[0m') 
+    
         if answerSqrt==correctAnswerSQRT:
             print ("\033[32mCorrect!\033[0m")
             break
-        else:
-            print("\033[31mIncorrect\033[0m try again", round(compute_Sqrt(SQRTnum1), 2))
+    else:
+        print(f"\033[31mIncorrect try again the answer is {correctAnswerSQRT}\033[0m")
+            
     #Ask another Answer
     retry = input("Would you like another question? (\033[32my\033[0m/\033[31mn\033[0m): ")
     if retry == 'n':
