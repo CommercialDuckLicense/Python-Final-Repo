@@ -100,7 +100,7 @@ while True:
     #user input for Square root
     # loop for when the question is wrong it loops until the answer is correct
     for attemptsLeft in range(max_attempts , 0, -1): 
-        answerSqrt= float(input(f'Find the Square Root of {SQRTnum1}, round to the 2nd decimal Ex:(X.XX) ->')) #allows for decmial values
+        answerSqrt= float(input(f'Find the Square Root of {SQRTnum1}, Round to the 2nd decimal Ex:(X.XX) ->')) #allows for decmial values
         print(f'\033[33mYou have {attemptsLeft-1} attempts left.\033[0m') 
     
         if answerSqrt==correctAnswerSQRT:
