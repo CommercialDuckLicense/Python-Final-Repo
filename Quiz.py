@@ -50,7 +50,7 @@ while True:
         print(f"\033[31mIncorrect try again the answer is {correctAnswerLCM}\033[0m") #this is not a permant print 
 
     #Ask another Answer
-    retry = input("Would you like to practice again question? (\033[32my\033[0m/\033[31mn\033[0m): ")
+    retry = input("Would you like to practice again or move onto the next question? (\033[32my\033[0m/\033[31mn\033[0m): ")
     if retry == 'n':
         print("Good work! On to the next set of questions")
         break
@@ -81,7 +81,7 @@ while True:
         print(f"\033[31mIncorrect try again the answer is {correctAnswerGCD}\033[0m")
 
     #Ask another Answer
-    retry = input("Would you more similar questions? (\033[32my\033[0m/\033[31mn\033[0m): ")
+    retry = input("Would you like to review similar questions? (\033[32my\033[0m/\033[31mn\033[0m): ")
     if retry == 'n':
         print("Good work! on to the next type of questions")
         break
