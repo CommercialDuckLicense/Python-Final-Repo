@@ -83,7 +83,7 @@ while True:
     #Ask another Answer
     retry = input("Would you more similar questions? (\033[32my\033[0m/\033[31mn\033[0m): ")
     if retry == 'n':
-        print("")
+        print("Good work! on to the next type of questions")
         break
     if retry == 'y':
         quit
