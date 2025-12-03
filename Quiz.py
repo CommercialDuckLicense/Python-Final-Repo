@@ -26,6 +26,7 @@ def compute_Sqrt(x):
 
 
 
+
 #loop to ask user if they want a similar question *LCM
 while True:
     #generate random number for LCM
